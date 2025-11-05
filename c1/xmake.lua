@@ -1,12 +1,36 @@
 add_rules("mode.debug", "mode.release")
 
+task("sentr")
+    on_run(function (name)
+        os.exec("sentr " .. name .. " 32 =")
+    end)
+
 target("t1")
     set_kind("binary")
     add_files("src/t1.cpp")
 
+    before_run(function (target)
+        import("core.project.task")
+        task.run("sentr", {}, "Sum")
+    end)
+
 target("t2")
     set_kind("binary")
     add_files("src/t2.cpp")
+
+    before_run(function (target)
+        import("core.project.task")
+        task.run("sentr", {}, "FracAcc")
+    end)
+
+target("SetApp")
+    set_kind("binary")
+    add_files("src/SetApp.cpp")
+
+    before_run(function (target)
+        import("core.project.task")
+        task.run("sentr", {}, "SetApp")
+    end)
 
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
