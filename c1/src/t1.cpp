@@ -16,7 +16,7 @@ long Sum2(long n) {
 }
 
 int main(int argc, char** argv) {
-    long n = 1000000;
+    long n = 100000;
     cout << "求和函数测试: n = " << n << endl;
     timeit<long(long)>("Sum1", Sum1, 1000000);
     timeit<long(long)>("Sum2", Sum2, 1000000);

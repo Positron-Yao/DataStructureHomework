@@ -7,29 +7,20 @@ task("sentr")
 
 target("t1")
     set_kind("binary")
-    add_files("src/t1.cpp")
+    add_files("src/SqList.cpp", "src/t1.cpp")
 
-    before_run(function (target)
+    before_run(function ()
         import("core.project.task")
-        task.run("sentr", {}, "Sum")
+        task.run("sentr", {}, "MoveLTZ")
     end)
 
 target("t2")
     set_kind("binary")
-    add_files("src/t2.cpp")
+    add_files("src/SqList.cpp", "src/t2.cpp")
 
-    before_run(function (target)
+    before_run(function ()
         import("core.project.task")
-        task.run("sentr", {}, "FracAcc")
-    end)
-
-target("SetApp")
-    set_kind("binary")
-    add_files("src/SetApp.cpp")
-
-    before_run(function (target)
-        import("core.project.task")
-        task.run("sentr", {}, "SetApp")
+        task.run("sentr", {}, "tmp")
     end)
 
 --
