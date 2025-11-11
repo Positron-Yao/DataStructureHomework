@@ -2,7 +2,7 @@ add_rules("mode.debug", "mode.release")
 
 task("sentr")
     on_run(function (name)
-        os.exec(string.format("sentr '< %s >' 32 =", name))
+        os.exec(string.format("sentr '< %s >' 50 =", name))
     end)
 
 target("main")
@@ -14,13 +14,22 @@ target("main")
         task.run("sentr", {}, "Main")
     end)
 
+target("t1")
+    set_kind("binary")
+    add_files("src/SLinkNode.cpp", "src/t1.cpp")
+
+    before_run(function ()
+        import("core.project.task")
+        task.run("sentr", {}, "Delete Repetition")
+    end)
+
 target("t2")
     set_kind("binary")
     add_files("src/SLinkNode.cpp", "src/t2.cpp")
 
     before_run(function ()
         import("core.project.task")
-        task.run("sentr", {}, "Delete Repetition")
+        task.run("sentr", {}, "Ordered Delete Repetition")
     end)
 
 target("t3")
