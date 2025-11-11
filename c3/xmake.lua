@@ -23,6 +23,15 @@ target("t2")
         task.run("sentr", {}, "Delete Repetition")
     end)
 
+target("t3")
+    set_kind("binary")
+    add_files("src/SLinkNode.cpp", "src/t3.cpp")
+
+    before_run(function ()
+        import("core.project.task")
+        task.run("sentr", {}, "MoveLTZ")
+    end)
+
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
 --

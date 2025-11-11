@@ -25,6 +25,6 @@ int main() {
     DelRepetition(head);
     printf("去重后: \t");
     DispList(head);
-    printf("Hello world\n");
+    // printf("Hello world\n");
     return 0;
 }
