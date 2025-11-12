@@ -21,6 +21,14 @@ int main(int argc, char** argv) {
     printf("反转后: \t");
     DispList(head);
 
+    printf("冒泡排序:\n");
+    printf("  - 升序: \t");
+    BubbleSort(head, true);
+    DispList(head);
+    printf("  - 降序: \t");
+    BubbleSort(head, false);
+    DispList(head);
+
     ElemType d1[size] = {1, 3, 5, 7, 9};
     ElemType d2[size] = {0, 2, 4, 6, 8};
     SLinkNode *h1, *h2, *m;

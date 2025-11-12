@@ -25,5 +25,8 @@ int DelElem(SLinkNode *&L, size_t i);
 int DelIf(SLinkNode *&L, std::function<bool(SLinkNode*)>);
 int CreateListL(SLinkNode *&L, ElemType arr[], size_t n);
 int CreateListR(SLinkNode *&L, ElemType arr[], size_t n);
+
 void Reverse(SLinkNode *&L);
 void Merge(SLinkNode *L1, SLinkNode *L2, SLinkNode *&L);
+void BubbleSort(SLinkNode *&L, bool increasing=true);
+

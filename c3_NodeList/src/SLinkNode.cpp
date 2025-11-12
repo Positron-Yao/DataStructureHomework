@@ -210,3 +210,27 @@ void Merge(SLinkNode *L1, SLinkNode *L2, SLinkNode *&L) {
         q->next = p2;
     }
 }
+
+void BubbleSort(SLinkNode *&L, bool increasing) {
+    if (L == NULL || L->next == NULL) return;
+    SLinkNode *st = L, *pre = st, *p = pre->next, *q = p->next;
+    for (int i = 0; i < GetLength(L); i++) {
+        while (q != NULL) {
+            if (increasing ^ (p->data < q->data)) {
+                p->next = q->next;
+                pre->next = q;
+                pre = pre->next;
+                q->next = p;
+                q = p->next;
+            } else {
+                pre = pre->next;
+                p = p->next;
+                q = q->next;
+            }
+        }
+        // st = st->next;
+        pre = st;
+        p = pre->next;
+        q = p->next;
+    }
+}
