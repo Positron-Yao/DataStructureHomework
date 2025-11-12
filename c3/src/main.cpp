@@ -20,6 +20,21 @@ int main(int argc, char** argv) {
     Reverse(head);
     printf("反转后: \t");
     DispList(head);
+
+    ElemType d1[size] = {1, 3, 5, 7, 9};
+    ElemType d2[size] = {0, 2, 4, 6, 8};
+    SLinkNode *h1, *h2, *m;
+    CreateListR(h1, d1, size);
+    CreateListR(h2, d2, size);
+    printf("二路归并:\n");
+    printf("  - h1: \t");
+    DispList(h1);
+    printf("  - h2: \t");
+    DispList(h2);
+    printf("  - 结果: \t");
+    Merge(h1, h2, m);
+    DispList(m);
+
     DestroyNodeList(head);
     return 0;
 }

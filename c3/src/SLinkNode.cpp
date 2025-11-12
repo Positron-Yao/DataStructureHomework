@@ -190,3 +190,23 @@ void Reverse(SLinkNode *&L) {
     L->next = _ReverseHelper(L->next);
 }
 
+void Merge(SLinkNode *L1, SLinkNode *L2, SLinkNode *&L) {
+    InitList(L);
+    SLinkNode *p1 = L1->next, *p2 = L2->next, *q = L;
+    while (p1 != NULL && p2 != NULL) {
+        if (p1->data < p2->data) {
+            q->next = p1;
+            p1 = p1->next;
+            q = q->next;
+        } else {
+            q->next = p2;
+            p2 = p2->next;
+            q = q->next;
+        }
+    }
+    if (p1 != NULL) {
+        q->next = p1;
+    } else {
+        q->next = p2;
+    }
+}
