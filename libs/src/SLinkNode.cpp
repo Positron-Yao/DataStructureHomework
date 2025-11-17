@@ -3,13 +3,22 @@
 #include <functional>
 #include "SLinkNode.h"
 
+namespace SLinkNode {
+
 void DispList(SLinkNode *L) {
     if (L != NULL && L->next != NULL) {
         L = L->next;
+#ifdef DSH_ELEMTYPE_CHAR
+        printf("%c", L->data);
+        while (L->next != NULL) {
+            L = L->next;
+            printf(" -> %c", L->data);
+#else
         printf("%d", L->data);
         while (L->next != NULL) {
             L = L->next;
             printf(" -> %d", L->data);
+#endif
         }
     }
     printf("\n");
@@ -234,3 +243,5 @@ void BubbleSort(SLinkNode *&L, bool increasing) {
         q = p->next;
     }
 }
+
+} // SLinkNode

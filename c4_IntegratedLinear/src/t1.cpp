@@ -1,7 +1,7 @@
 #include <cstdio>
 #include "SqList.h"
 
-void DelDup(SqList &L) {
+void DelDup(SqList::SqList &L) {
     // 有序线性表的去重
     for (int i = 0; i < L.length; i++) {
         for (int j = i + 1; j < L.length; j++) {
@@ -20,13 +20,13 @@ void DelDup(SqList &L) {
 int main() {
     size_t const size = 10;
     ElemType data[size] = {1, 1, 4, 5, 1, 4, 1, 9, 1 ,9};
-    SqList l;
-    CreateList(l, data, size);
+    SqList::SqList l;
+    SqList::CreateList(l, data, size);
     printf("初始数据: \t");
-    DispList(l);
+    SqList::DispList(l);
     DelDup(l);
     printf("去重后: \t");
-    DispList(l);
+    SqList::DispList(l);
     // printf("Hello world.\n");
     return 0;
 };

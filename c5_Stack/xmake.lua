@@ -2,17 +2,52 @@ add_rules("mode.debug", "mode.release")
 
 includes("~/.xmake")
 includes("../libs")
+-- add_defines("DSH_ELEMTYPE_CHAR")
 
-target("main")
+target("t1")
     set_kind("binary")
-    add_files("src/main.cpp")
+    add_files("src/t1.cpp")
     add_links("dsh")
     add_deps("dsh")
 
     before_run(function ()
         import("core.project.task")
-        task.run("sentr", {}, "Main")
+        task.run("sentr", {}, "SqStack")
     end)
+
+target("t2")
+    set_kind("binary")
+    add_files("src/t2.cpp")
+    add_links("dsh")
+    add_deps("dsh")
+
+    before_run(function ()
+        import("core.project.task")
+        task.run("sentr", {}, "LinkStack")
+    end)
+
+target("t3")
+    set_kind("binary")
+    add_files("src/t3.cpp")
+    add_links("dsh")
+    add_deps("dsh")
+
+    before_run(function ()
+        import("core.project.task")
+        task.run("sentr", {}, "Delete Matched Elements")
+    end)
+
+target("t4")
+    set_kind("binary")
+    add_files("src/t4.cpp")
+    add_links("dsh")
+    add_deps("dsh")
+
+    before_run(function ()
+        import("core.project.task")
+        task.run("sentr", {}, "Check Stack Sequence")
+    end)
+
 
 --
 -- If you want to known more usage about xmake, please see https://xmake.io

@@ -1,6 +1,8 @@
 #include <cstdio>
 #include "SqList.h"
 
+namespace SqList {
+
 void InitList(SqList &L) {
     L.length = 0;
 }
@@ -65,3 +67,5 @@ void CreateList(SqList &L, ElemType e[], size_t n) {
     }
     L.length = n;
 }
+
+} // SqList

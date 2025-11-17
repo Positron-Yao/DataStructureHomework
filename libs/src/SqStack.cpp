@@ -1,5 +1,7 @@
 #include "SqStack.h"
 
+namespace SqStack {
+
 void InitStack(SqStack &st) {
     st.top = -1;
 }
@@ -26,7 +28,7 @@ int Pop(SqStack &st, ElemType &x) {
     }
 }
 
-int GetTop(SqStack &st, ElemType &x) {
+int GetTop(SqStack const &st, ElemType &x) {
     if (st.top == -1) {
         return -1;
     } else {
@@ -35,6 +37,8 @@ int GetTop(SqStack &st, ElemType &x) {
     }
 }
 
-bool StackEmpty(SqStack &st) {
+bool StackEmpty(SqStack const &st) {
     return st.top == -1;
 }
+
+} // SqStack
