@@ -1,0 +1,31 @@
+[
+{
+  "directory": "/home/ely/desktop/DataStructure/homework/c4_IntegratedLinear",
+  "arguments": ["/usr/sbin/g++", "-c", "-m64", "-g", "-O0", "-I../libs/include", "-o", "build/.objs/slinknode/linux/x86_64/debug/__/libs/src/SLinkNode.cpp.o", "../libs/src/SLinkNode.cpp"],
+  "file": "../libs/src/SLinkNode.cpp"
+},
+{
+  "directory": "/home/ely/desktop/DataStructure/homework/c4_IntegratedLinear",
+  "arguments": ["/usr/sbin/g++", "-c", "-m64", "-g", "-O0", "-I../libs/include", "-o", "build/.objs/sqlist/linux/x86_64/debug/__/libs/src/SqList.cpp.o", "../libs/src/SqList.cpp"],
+  "file": "../libs/src/SqList.cpp"
+},
+{
+  "directory": "/home/ely/desktop/DataStructure/homework/c4_IntegratedLinear",
+  "arguments": ["/usr/sbin/g++", "-c", "-m64", "-g", "-O0", "-I../libs/include", "-o", "build/.objs/t2/linux/x86_64/debug/src/t2.cpp.o", "src/t2.cpp"],
+  "file": "src/t2.cpp"
+},
+{
+  "directory": "/home/ely/desktop/DataStructure/homework/c4_IntegratedLinear",
+  "arguments": ["/usr/sbin/g++", "-c", "-m64", "-g", "-O0", "-I../libs/include", "-o", "build/.objs/sqstack/linux/x86_64/debug/__/libs/src/SqStack.cpp.o", "../libs/src/SqStack.cpp"],
+  "file": "../libs/src/SqStack.cpp"
+},
+{
+  "directory": "/home/ely/desktop/DataStructure/homework/c4_IntegratedLinear",
+  "arguments": ["/usr/sbin/g++", "-c", "-m64", "-g", "-O0", "-I../libs/include", "-o", "build/.objs/t1/linux/x86_64/debug/src/t1.cpp.o", "src/t1.cpp"],
+  "file": "src/t1.cpp"
+},
+{
+  "directory": "/home/ely/desktop/DataStructure/homework/c4_IntegratedLinear",
+  "arguments": ["/usr/sbin/g++", "-c", "-m64", "-g", "-O0", "-I../libs/include", "-o", "build/.objs/t3/linux/x86_64/debug/src/t3.cpp.o", "src/t3.cpp"],
+  "file": "src/t3.cpp"
+}]

@@ -43,6 +43,6 @@ int main() {
     printf("归并后: \n");
     printf("  - l: \t\t");
     DispList(l);
-    printf("Hello world.\n");
+    // printf("Hello world.\n");
     return 0;
 }

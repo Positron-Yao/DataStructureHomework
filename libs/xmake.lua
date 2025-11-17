@@ -10,6 +10,11 @@ target("sqlist")
     add_files("src/SqList.cpp")
     add_includedirs("include", {public = true})
 
+target("sqstack")
+    set_kind("static")
+    add_files("src/SqStack.cpp")
+    add_includedirs("include", {public = true})
+
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
 --
