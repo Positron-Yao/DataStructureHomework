@@ -1,0 +1,41 @@
+[
+{
+  "directory": "/home/ely/desktop/DataStructure/homework/c8_Recursion",
+  "arguments": ["/usr/bin/g++", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-O3", "-I../libs/include", "-DNDEBUG", "-o", "build/.objs/dsh/linux/x86_64/release/__/libs/src/LinkQuene.cpp.o", "../libs/src/LinkQuene.cpp"],
+  "file": "../libs/src/LinkQuene.cpp"
+},
+{
+  "directory": "/home/ely/desktop/DataStructure/homework/c8_Recursion",
+  "arguments": ["/usr/bin/g++", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-O3", "-I../libs/include", "-DNDEBUG", "-o", "build/.objs/dsh/linux/x86_64/release/__/libs/src/SqString.cpp.o", "../libs/src/SqString.cpp"],
+  "file": "../libs/src/SqString.cpp"
+},
+{
+  "directory": "/home/ely/desktop/DataStructure/homework/c8_Recursion",
+  "arguments": ["/usr/bin/g++", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-O3", "-I../libs/include", "-DNDEBUG", "-o", "build/.objs/dsh/linux/x86_64/release/__/libs/src/SqList.cpp.o", "../libs/src/SqList.cpp"],
+  "file": "../libs/src/SqList.cpp"
+},
+{
+  "directory": "/home/ely/desktop/DataStructure/homework/c8_Recursion",
+  "arguments": ["/usr/bin/g++", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-O3", "-I../libs/include", "-DNDEBUG", "-o", "build/.objs/dsh/linux/x86_64/release/__/libs/src/LinkStack.cpp.o", "../libs/src/LinkStack.cpp"],
+  "file": "../libs/src/LinkStack.cpp"
+},
+{
+  "directory": "/home/ely/desktop/DataStructure/homework/c8_Recursion",
+  "arguments": ["/usr/bin/g++", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-O3", "-I../libs/include", "-DNDEBUG", "-o", "build/.objs/dsh/linux/x86_64/release/__/libs/src/SLinkNode.cpp.o", "../libs/src/SLinkNode.cpp"],
+  "file": "../libs/src/SLinkNode.cpp"
+},
+{
+  "directory": "/home/ely/desktop/DataStructure/homework/c8_Recursion",
+  "arguments": ["/usr/bin/g++", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-O3", "-I../libs/include", "-DNDEBUG", "-o", "build/.objs/dsh/linux/x86_64/release/__/libs/src/LinkString.cpp.o", "../libs/src/LinkString.cpp"],
+  "file": "../libs/src/LinkString.cpp"
+},
+{
+  "directory": "/home/ely/desktop/DataStructure/homework/c8_Recursion",
+  "arguments": ["/usr/bin/g++", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-O3", "-I../libs/include", "-DNDEBUG", "-o", "build/.objs/dsh/linux/x86_64/release/__/libs/src/SqStack.cpp.o", "../libs/src/SqStack.cpp"],
+  "file": "../libs/src/SqStack.cpp"
+},
+{
+  "directory": "/home/ely/desktop/DataStructure/homework/c8_Recursion",
+  "arguments": ["/usr/bin/g++", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-O3", "-I../libs/include", "-DNDEBUG", "-o", "build/.objs/main/linux/x86_64/release/src/main.cpp.o", "src/main.cpp"],
+  "file": "src/main.cpp"
+}]
