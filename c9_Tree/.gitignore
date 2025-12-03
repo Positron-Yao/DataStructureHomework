@@ -2,7 +2,6 @@
 .xmake/
 .cache/
 build/
-tags
 
 # MacOS Cache
 .DS_Store
