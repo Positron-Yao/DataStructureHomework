@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
     FindMin(L, min);
     cout << "Max: \t" << max << "\n";
     cout << "Min: \t" << min << "\n";
-    std::cout << "hello world!" << std::endl;
+    // std::cout << "hello world!" << std::endl;
     return 0;
 }
 

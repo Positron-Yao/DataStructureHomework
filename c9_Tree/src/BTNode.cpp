@@ -2,34 +2,59 @@
 
 namespace BTNode {
 
-BTNode *create(BTNode *& bt, char const *str) {
-    bt = nullptr;
-    BTNode *st[MaxSize], *p=nullptr;
-    int top = -1, k, j = 0;
-    char ch = str[j];
-
-    while (ch != '\0') {
-        switch (ch) {
-            case '(': top++; st[top] = p; k = 1; break;
-            case ')': top--; break;
-            case ',': k = 2; break;
-            default: 
-                p = new BTNode;
-                p->data = ch;
-                p->left = p->right = nullptr;
-                if (bt == nullptr) {
-                    bt = p;
-                } else {
-                    switch (k) {
-                        case 1: st[top]->left = p; break;
-                        case 2: st[top]->right = p; break;
-                    }
-                }
+template<>
+void BTNode::create<char>() {
+    while (str[pos] != '\0') {
+        switch (str[pos]) {
+            case ' ':
+                pos++;
+                break;
+            case '(':
+                pos++;
+                left = new BTNode(str + pos);
+                left->create<char>();
+                pos += left->pos + 1;
+                right = new BTNode(str + pos);
+                right->create<char>();
+                pos += right->pos + 1;
+                break;
+            case ')':
+            case ',':
+                return;
+            default:
+                data = str[pos];
+                pos++;
+                break;
         }
-        j++;
-        ch = str[j];
     }
-    return bt;
 }
 
-}; // BTNode
+template<>
+void BTNode::create<int>() {
+    while (str[pos] != '\0') {
+        switch (str[pos]) {
+            case ' ':
+                pos++;
+                break;
+            case '(':
+                pos++;
+                left = new BTNode(str + pos);
+                left->create<int>();
+                pos += left->pos + 1;
+                right = new BTNode(str + pos);
+                right->create<int>();
+                pos += right->pos + 1;
+                break;
+            case ')':
+            case ',':
+                return;
+            default:
+                data = str[pos] - 'a';
+                pos++;
+                break;
+        }
+    }
+}
+
+
+} // BTNode
