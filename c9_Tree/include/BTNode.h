@@ -7,28 +7,26 @@ namespace BTNode {
 
 typedef int Elemtype;
 
-class BTNode {
+template<typename T>
+class BaseBTNode {
     public:
         Elemtype data;
-        BTNode *left, *right;
+        BaseBTNode *left, *right;
+        int pos;
 
-        BTNode(char const *str): str(str) {}
+        BaseBTNode() = default;
 
-        template<typename T>
-        void create();
-
-        template<typename T>
         void show() {
             std::cout << static_cast<T>(data);
             if (left || right) {
                 std::cout << "(";
                 if (left)
-                    left->show<T>();
+                    left->show();
                 else
                     std::cout << "#";
                 std::cout << ",";
                 if (right)
-                    right->show<T>();
+                    right->show();
                 else
                     std::cout << "#";
                 std::cout << ")";
@@ -78,16 +76,16 @@ class BTNode {
 
         // 使用先序遍历输出根节点到每个叶子结点的路径
         int preorder_leafpath() {
-            std::vector<char> path;
+            std::vector<T> path;
             preorder_leafpath_helper(path);
             return 0;
         }
 
-        void preorder_leafpath_helper(std::vector<char>& path) {
+        void preorder_leafpath_helper(std::vector<T>& path) {
             path.push_back(data);
             if (left == nullptr && right == nullptr) {
                 // 输出路径
-                for (char node : path) {
+                for (T node : path) {
                     std::cout << node << " -> ";
                 }
                 std::cout << "#\n";
@@ -97,13 +95,13 @@ class BTNode {
             path.pop_back();
         }
 
-        int path_with_sum() {
-            std::vector<char> path;
-            path_with_sum_helper(path);
+        int path_with_sum(T target) {
+            std::vector<T> path;
+            path_with_sum_helper(path, target);
             return 0;
         }
 
-        void path_with_sum_helper(std::vector<char>& path) {
+        void path_with_sum_helper(std::vector<T>& path, T target) {
             path.push_back(data);
             if (left == nullptr && right == nullptr) {
                 // 输出路径
@@ -111,15 +109,81 @@ class BTNode {
                 for (auto a : path) {
                     sum += a;
                 }
+                if (sum == target) {
+                    for (T node : path) {
+                        std::cout << node << " -> ";
+                    }
+                    std::cout << "#\n";
+                }
             }
-            if (left) left->path_with_sum_helper(path);
-            if (right) right->path_with_sum_helper(path);
+            if (left) left->path_with_sum_helper(path, target);
+            if (right) right->path_with_sum_helper(path, target);
             path.pop_back();
         }
 
-    private:
+};
+
+template<typename T>
+class BTNode;
+
+template<>
+class BTNode<char>: public BaseBTNode<char> {
+    public:
         char const *str;
-        int pos = 0;
+
+        BTNode(char const *str): str(str) {
+            while (str[pos] != '\0') {
+                switch (str[pos]) {
+                    case ' ':
+                        pos++;
+                        break;
+                    case '(':
+                        pos++;
+                        left = new BTNode<char>(str + pos);
+                        pos += left->pos + 1;
+                        right = new BTNode<char>(str + pos);
+                        pos += right->pos + 1;
+                        break;
+                    case ')':
+                    case ',':
+                        return;
+                    default:
+                        data = str[pos];
+                        pos++;
+                        break;
+                }
+            }
+        }
+};
+
+template<>
+class BTNode<int>: public BaseBTNode<int> {
+    public:
+        char const *str;
+
+        BTNode(char const *str): str(str) {
+            while (str[pos] != '\0') {
+                switch (str[pos]) {
+                    case ' ':
+                        pos++;
+                        break;
+                    case '(':
+                        pos++;
+                        left = new BTNode<int>(str + pos);
+                        pos += left->pos + 1;
+                        right = new BTNode<int>(str + pos);
+                        pos += right->pos + 1;
+                        break;
+                    case ')':
+                    case ',':
+                        return;
+                    default:
+                        data = str[pos] - 'a';
+                        pos++;
+                        break;
+                }
+            }
+        }
 };
 
 } // BTNode
