@@ -1,0 +1,6 @@
+[
+{
+  "directory": "/home/ely/desktop/DataStructure/homework/c11_Graph",
+  "arguments": ["/usr/sbin/g++", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-O3", "-Iinclude", "-DNDEBUG", "-o", "build/.objs/c11_Graph/linux/x86_64/release/src/main.cpp.o", "src/main.cpp"],
+  "file": "src/main.cpp"
+}]
