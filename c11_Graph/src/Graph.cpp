@@ -46,7 +46,7 @@ void DispGraph(AdjGraph *G) {
     ArcNode *p;
     int i;
     for (i = 0; i < G->n; i++) {
-        printf("[%2d]", i);
+        printf("[%d]", i);
         p = G->adjlist[i].firstarc;
         if (p != nullptr) {
             printf(" -> ");
@@ -95,8 +95,7 @@ int Degree2(AdjGraph *G, int v) {
     return d;
 }
 
-bool visited[MAXVEX];
-bool CycleFrom(AdjGraph *G, int v) {
+bool CycleSolver::solve_from(int v) {
     ArcNode *p;
     int w;
     visited[v] = true;
@@ -104,19 +103,19 @@ bool CycleFrom(AdjGraph *G, int v) {
     while (p != nullptr) {
         w = p->adjvex;
         if (!visited[w]) {
-            if (CycleFrom(G, w)) return true;
+            if (solve_from(w)) return true;
         } else return true;
         p = p->nextarc;
     }
     return false;
 }
 
-bool Cycle(AdjGraph *G) {
+bool CycleSolver::solve() {
     for (int i = 0; i < G->n; i++) {
         for (int j = 0; j < G->n; j++) {
             visited[j] = false;
         }
-        if (CycleFrom(G, i)) return true;
+        if (solve_from(i)) return true;
     }
     return false;
 }

@@ -25,6 +25,17 @@ void DestroyGraph(AdjGraph *&G);
 void DispGraph(AdjGraph *G);
 int Degree1(AdjGraph *G, int v);
 int Degree2(AdjGraph *G, int v);
-bool Cycle(AdjGraph *G);
+
+class CycleSolver {
+    public:
+        CycleSolver(AdjGraph *G): G(G) {}
+        bool solve();
+        bool solve_from(int v);
+
+    private:
+        AdjGraph *G;
+        bool visited[MAXVEX];
+};
+
 void Travelsal(AdjGraph *G, int u, int v, int k, int path[], int d);
 void FindCPath(AdjGraph *G, int k);

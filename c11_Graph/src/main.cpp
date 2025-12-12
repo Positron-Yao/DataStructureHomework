@@ -29,32 +29,31 @@ int main(int argc, char **argv) {
     printf("\n");
     AdjGraph *B, *C;
     int b[][MAXVEX] = {
-        {0, 1, 1, 0, 1},
-        {0, 0, 1, 0, 0},
+        {0, 1, 1, 1, 1},
+        {0, 0, 1, 1, 1},
         {0, 0, 0, 1, 1},
-        {0, 1, 0, 0, 0},
+        {0, 0, 0, 0, 1},
         {0, 0, 0, 0, 0},
     };
     n = 5; e = 7;
     CreateGraph(B, b, n, e);
     printf("邻接表B:\n");
     DispGraph(B);
-    printf("B中%s存在环\n", (Cycle(B)) ? "" : "不");
+    printf("B中%s存在环\n", (CycleSolver(B).solve()) ? "" : "不");
     DestroyGraph(B);
 
     int c[][MAXVEX] = {
-        {0, 1, 1, 0, 1},
-        {0, 0, 1, 0, 0},
+        {0, 1, 1, 0, 0},
         {0, 0, 0, 0, 1},
-        {0, 1, 0, 0, 0},
         {0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0},
+        {0, 0, 0, 1, 0},
     };
     n = 5; e = 6;
     CreateGraph(C, c, n, e);
     printf("邻接表C:\n");
     DispGraph(C);
-    printf("C中%s存在环\n", (Cycle(C)) ? "" : "不");
-    // TODO: 为什么不对()
+    printf("C中%s存在环\n", (CycleSolver(C).solve()) ? "" : "不");
     DestroyGraph(C);
 
     // ## 3
@@ -68,7 +67,7 @@ int main(int argc, char **argv) {
     };
     n = 5; e = 6;
     CreateGraph(G, D, n, e);
-    printf("邻接表:\n");
+    printf("邻接表D:\n");
     DispGraph(G);
     printf("路径:\n");
     int v = 4;
