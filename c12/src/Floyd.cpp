@@ -42,7 +42,7 @@ void Floyd::show_data(int k) {
         }
         printf("\t");
         for (j = 0; j < g.n; j++) {
-            printf("%3d", path[i][j]);
+            printf("%4d", path[i][j]);
         }
         printf("\n");
     }
