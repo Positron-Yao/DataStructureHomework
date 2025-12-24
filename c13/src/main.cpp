@@ -1,5 +1,15 @@
-#include <stdio.h>
+#include <cstdio>
 #include "BinSearch.h"
+#include "BST.h"
+
+void ReOrder(BSTNode *bt) {
+    if (bt != nullptr) {
+        ReOrder(bt->rchild);
+        printf("%d ", bt->key);
+        ReOrder(bt->lchild);
+
+    }
+}
 
 int main(int argc, char **argv) {
     // # 1
@@ -36,6 +46,14 @@ int main(int argc, char **argv) {
 
     // # 3
     printf("#3 递减有序输出二叉排序树的结点&关键字\n");
-    // TODO
+    KeyType c[n] = {19, 13, 2, 7, 29, 3, 5, 17, 11, 23};
+    BSTNode *bt;
+    CreateBST(bt, c, n);
+    printf("二叉排序树:\n");
+    DispBST(bt);
+    printf("输出:\n");
+    ReOrder(bt);
+    printf("\n");
+    DestroyBST(bt);
 }
 

@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <cstdio>
 #include "BinSearch.h"
 
 int BinSearchCount(SqType R[], int n, int k, int &count) {
